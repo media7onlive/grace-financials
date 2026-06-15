@@ -1,5 +1,13 @@
 import { Link } from 'react-router-dom'
-import GraceLogo from './GraceLogo'
+const GraceLogo = () => (
+  <Link to="/" className="flex items-center gap-sm group shrink-0">
+    <img
+      src="/grace_logo.jpg"
+      alt="Grace Financial"
+      className="h-24 w-auto object-contain"
+    />
+  </Link>
+)
 
 export default function Footer() {
   return (
