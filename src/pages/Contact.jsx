@@ -1,114 +1,149 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Contact() {
+  const [submitting, setSubmitting] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitting(true)
+    setTimeout(() => {
+      setSubmitting(false)
+      setSubmitted(true)
+      e.target.reset()
+      setTimeout(() => setSubmitted(false), 3000)
+    }, 1500)
+  }
+
   return (
     <main>
-      <section className="pt-[80px] bg-gradient-to-br from-primary via-primary-container to-primary text-white section-padding">
-        <div className="container-max text-center">
-          <h1 className="text-display-lg-mobile md:text-display-lg mb-md">Get in Touch</h1>
-          <p className="text-body-lg text-on-primary-container max-w-2xl mx-auto">Ready to start your financial journey? Reach out to us today.</p>
+      <section className="bg-gradient-to-br from-primary via-primary-container to-primary py-xxl text-on-primary">
+        <div className="max-w-container-max mx-auto px-lg">
+          <h1 className="text-display-lg mb-md">Get in Touch</h1>
+          <p className="text-body-lg max-w-2xl opacity-90">Expert financial guidance is just a message away. Our team of specialists is ready to help you navigate your growth journey.</p>
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="container-max">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-xl">
-            <div className="card p-xl">
-              <h2 className="text-headline-md text-primary mb-lg">Quick Loan Enquiry</h2>
-              <form className="flex flex-col gap-md" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
-                  <div>
-                    <label className="text-label-md text-on-surface mb-xs block">Full Name</label>
-                    <input type="text" className="w-full px-md py-sm border border-outline-variant rounded-lg text-body-md focus:ring-2 focus:ring-secondary focus:border-secondary outline-none" placeholder="Your name" />
-                  </div>
-                  <div>
-                    <label className="text-label-md text-on-surface mb-xs block">Phone Number</label>
-                    <input type="tel" className="w-full px-md py-sm border border-outline-variant rounded-lg text-body-md focus:ring-2 focus:ring-secondary focus:border-secondary outline-none" placeholder="+91 XXXXX XXXXX" />
-                  </div>
-                </div>
-                <div>
-                  <label className="text-label-md text-on-surface mb-xs block">Email Address</label>
-                  <input type="email" className="w-full px-md py-sm border border-outline-variant rounded-lg text-body-md focus:ring-2 focus:ring-secondary focus:border-secondary outline-none" placeholder="your@email.com" />
-                </div>
-                <div>
-                  <label className="text-label-md text-on-surface mb-xs block">Loan Type</label>
-                  <select className="w-full px-md py-sm border border-outline-variant rounded-lg text-body-md text-on-surface focus:ring-2 focus:ring-secondary focus:border-secondary outline-none">
-                    <option value="">Select a loan type</option>
-                    <option>Home Loan</option>
-                    <option>Vehicle Loan</option>
-                    <option>Business Loan</option>
-                    <option>Personal Loan</option>
-                    <option>Education Loan</option>
-                    <option>Property Loan</option>
-                    <option>Mudra Loan</option>
-                    <option>Solar Finance</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="text-label-md text-on-surface mb-xs block">Message</label>
-                  <textarea rows={4} className="w-full px-md py-sm border border-outline-variant rounded-lg text-body-md focus:ring-2 focus:ring-secondary focus:border-secondary outline-none" placeholder="Tell us about your requirements..."></textarea>
-                </div>
-                <button type="submit" className="btn-primary">Submit Enquiry</button>
-              </form>
-            </div>
+      <section className="max-w-container-max mx-auto px-lg -mt-xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+          <div className="lg:col-span-7 bg-surface-container-lowest p-xxl rounded-xl shadow-lg border border-outline-variant/30">
+            <h2 className="text-headline-md text-primary mb-xl">Quick Loan Enquiry</h2>
+            <form className="grid grid-cols-1 md:grid-cols-2 gap-lg" onSubmit={handleSubmit}>
+              <div className="space-y-xs">
+                <label className="text-label-md text-on-surface-variant">Full Name</label>
+                <input className="w-full bg-surface p-md rounded-lg border border-outline-variant text-body-md" placeholder="John Doe" type="text" required />
+              </div>
+              <div className="space-y-xs">
+                <label className="text-label-md text-on-surface-variant">Phone Number</label>
+                <input className="w-full bg-surface p-md rounded-lg border border-outline-variant text-body-md" placeholder="+91 98765 43210" type="tel" required />
+              </div>
+              <div className="space-y-xs">
+                <label className="text-label-md text-on-surface-variant">Email Address</label>
+                <input className="w-full bg-surface p-md rounded-lg border border-outline-variant text-body-md" placeholder="john@example.com" type="email" required />
+              </div>
+              <div className="space-y-xs">
+                <label className="text-label-md text-on-surface-variant">Loan Type</label>
+                <select className="w-full bg-surface p-md rounded-lg border border-outline-variant text-body-md">
+                  <option>Home Loan</option>
+                  <option>Vehicle Loan</option>
+                  <option>Business Loan</option>
+                  <option>Personal Loan</option>
+                </select>
+              </div>
+              <div className="md:col-span-2 space-y-xs">
+                <label className="text-label-md text-on-surface-variant">Message</label>
+                <textarea className="w-full bg-surface p-md rounded-lg border border-outline-variant text-body-md" placeholder="Tell us about your requirements..." rows="4"></textarea>
+              </div>
+              <div className="md:col-span-2 mt-md">
+                <button type="submit" disabled={submitting}
+                  className={`w-full py-md rounded-lg text-headline-sm transition-all flex justify-center items-center gap-sm ${
+                    submitted ? 'bg-emerald-600 text-white' : 'bg-primary text-on-primary hover:opacity-90'
+                  }`}>
+                  {submitting ? (
+                    <><span className="material-symbols-outlined animate-spin">refresh</span> Submitting...</>
+                  ) : submitted ? (
+                    <><span className="material-symbols-outlined">check_circle</span> Success</>
+                  ) : (
+                    <>Submit Enquiry <span className="material-symbols-outlined">send</span></>
+                  )}
+                </button>
+              </div>
+            </form>
+          </div>
 
-            <div>
-              <div className="card p-xl mb-lg">
-                <h2 className="text-headline-md text-primary mb-lg">Contact Information</h2>
-                <div className="flex flex-col gap-md">
-                  {[
-                    { icon: 'call', label: 'Phone', value: '+91 1800-123-4567', desc: 'Mon-Sat, 9:30 AM - 6:30 PM' },
-                    { icon: 'mail', label: 'Email', value: 'info@gracefinancial.in', desc: 'We reply within 24 hours' },
-                    { icon: 'location_on', label: 'Office Address', value: '123 Business Tower, Bandra Kurla Complex, Mumbai - 400001', desc: 'Visit us during working hours' },
-                    { icon: 'schedule', label: 'Working Hours', value: 'Monday - Saturday', desc: '9:30 AM - 6:30 PM' },
-                  ].map((item) => (
-                    <div key={item.label} className="flex items-start gap-md">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                        <span className="material-symbols-outlined text-primary">{item.icon}</span>
-                      </div>
-                      <div>
-                        <p className="text-label-md text-on-surface-variant">{item.label}</p>
-                        <p className="text-body-md text-primary font-medium">{item.value}</p>
-                        <p className="text-label-sm text-on-surface-variant">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
+          <div className="lg:col-span-5 flex flex-col gap-xl">
+            <div className="bg-surface-container-lowest p-xl rounded-xl border border-outline-variant/30 space-y-lg">
+              <h3 className="text-headline-sm text-primary">Contact Information</h3>
+              <div className="flex gap-lg items-start">
+                <div className="bg-primary-container p-sm rounded-lg text-on-primary-container">
+                  <span className="material-symbols-outlined">call</span>
+                </div>
+                <div>
+                  <p className="text-label-md text-on-surface-variant">Phone</p>
+                  <p className="text-body-lg text-primary">+91 22 4567 8900</p>
+                  <p className="text-body-md text-on-surface-variant">+91 98200 12345</p>
                 </div>
               </div>
-
-              <div className="card p-xl">
-                <h3 className="text-headline-sm text-primary mb-md">Connect With Us</h3>
-                <div className="flex gap-md">
-                  {[
-                    { icon: 'groups', label: 'Facebook' },
-                    { icon: 'diversity_3', label: 'Twitter' },
-                    { icon: 'work', label: 'LinkedIn' },
-                    { icon: 'play_circle', label: 'YouTube' },
-                  ].map((s) => (
-                    <a key={s.label} href="#" className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors" aria-label={s.label}>
-                      <span className="material-symbols-outlined">{s.icon}</span>
-                    </a>
-                  ))}
+              <div className="flex gap-lg items-start">
+                <div className="bg-primary-container p-sm rounded-lg text-on-primary-container">
+                  <span className="material-symbols-outlined">mail</span>
+                </div>
+                <div>
+                  <p className="text-label-md text-on-surface-variant">Email</p>
+                  <p className="text-body-lg text-primary">support@gracefinancial.com</p>
+                  <p className="text-body-md text-on-surface-variant">invest@gracefinancial.com</p>
                 </div>
               </div>
-
-              <div className="mt-lg">
-                <Link to="https://wa.me/9118001234567" target="_blank" className="btn-premium flex items-center justify-center gap-sm w-full">
-                  <span className="material-symbols-outlined">chat</span>
-                  Chat on WhatsApp
-                </Link>
+              <div className="flex gap-lg items-start">
+                <div className="bg-primary-container p-sm rounded-lg text-on-primary-container">
+                  <span className="material-symbols-outlined">location_on</span>
+                </div>
+                <div>
+                  <p className="text-label-md text-on-surface-variant">Office Address</p>
+                  <p className="text-body-lg text-primary">The Executive Suite, Level 15<br/>Bandra Kurla Complex<br/>Mumbai, MH 400051</p>
+                </div>
               </div>
             </div>
+
+            <div className="bg-primary-container p-xl rounded-xl text-on-primary-container space-y-lg">
+              <div className="flex justify-between items-center">
+                <h3 className="text-headline-sm">Business Hours</h3>
+                <span className="bg-emerald-500/20 text-emerald-300 text-label-sm px-sm py-xs rounded-full">Open Now</span>
+              </div>
+              <ul className="space-y-sm text-body-md opacity-80">
+                <li className="flex justify-between"><span>Monday - Friday</span><span>09:00 AM - 06:00 PM</span></li>
+                <li className="flex justify-between"><span>Saturday</span><span>09:00 AM - 01:00 PM</span></li>
+                <li className="flex justify-between text-on-primary-container/60"><span>Sunday</span><span>Closed</span></li>
+              </ul>
+              <hr className="border-on-primary-container/20" />
+              <div className="flex gap-lg justify-center">
+                <a className="hover:text-secondary-fixed transition-colors" href="#"><span className="material-symbols-outlined">language</span></a>
+                <a className="hover:text-secondary-fixed transition-colors" href="#"><span className="material-symbols-outlined">share</span></a>
+                <a className="hover:text-secondary-fixed transition-colors" href="#"><span className="material-symbols-outlined">hub</span></a>
+              </div>
+            </div>
+
+            <Link to="https://wa.me/919820012345" className="bg-[#25D366] text-white p-lg rounded-xl flex items-center justify-between text-headline-sm hover:shadow-xl transition-all group">
+              <div className="flex items-center gap-md">
+                <span className="material-symbols-outlined text-[32px]">chat</span>
+                <span>WhatsApp Us</span>
+              </div>
+              <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="section-padding bg-surface-container-low">
-        <div className="container-max">
-          <div className="rounded-xl overflow-hidden h-[400px] bg-surface-container-high flex items-center justify-center flex-col gap-sm text-on-surface-variant">
-            <span className="material-symbols-outlined text-4xl">map</span>
-            <p className="text-body-lg">Google Maps Placeholder</p>
-            <p className="text-body-sm">123 Business Tower, Bandra Kurla Complex, Mumbai</p>
+      <section className="mt-giant w-full h-[500px] bg-surface-container relative overflow-hidden">
+        <div className="absolute inset-0 grayscale opacity-80 hover:grayscale-0 transition-all duration-700">
+          <img className="w-full h-full object-cover" alt=""
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuACrep7j_SvwojIBudv3U_ygD7-0sqQytHyeFCZUotZvKf8oE1zMLP_39HRPniVWwKiOg5llHyNPoBh0Iij1Mm0wwiVF20hFRdpYKQsOWYcr6bJ-_VEC0qD9MONviEK6LhvyfdgDjAe6Q0v5CweOmmjl5J1ahsaKLcC5xSS2ujS-G-BAdEzb3esQn6lnvZ0sp30EdDGUvD1RiEvI53rqZhvznsF0RrgILiHT8orLDh6wao2rV_mQKrlLw" />
+        </div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="bg-primary text-on-primary p-lg rounded-xl shadow-2xl flex items-center gap-md animate-bounce">
+            <span className="material-symbols-outlined text-[32px]" style={{ fontVariationSettings: "'FILL' 1" }}>location_on</span>
+            <span className="text-headline-sm">We are here</span>
           </div>
         </div>
       </section>

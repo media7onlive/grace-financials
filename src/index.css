@@ -45,4 +45,9 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+  .masonry-grid {
+    columns: 1;
+  }
+  @media (min-width: 768px) { .masonry-grid { columns: 2; } }
+  @media (min-width: 1024px) { .masonry-grid { columns: 3; } }
 }

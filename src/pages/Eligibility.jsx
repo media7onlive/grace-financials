@@ -38,15 +38,16 @@ export default function Eligibility() {
     const eligible = calculateEligibility()
     const recs = getRecommendations()
     return (
-      <main>
-        <section className="pt-[80px] bg-gradient-to-br from-primary via-primary-container to-primary text-white section-padding">
-          <div className="container-max text-center">
-            <span className="material-symbols-outlined text-6xl text-secondary-fixed mb-sm">check_circle</span>
-            <h1 className="text-display-lg-mobile md:text-display-lg mb-md">Your Eligibility Results</h1>
+      <main className="mt-giant">
+        <section className="relative pt-xxl pb-giant bg-primary overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-container to-primary"></div>
+          <div className="relative z-10 max-w-container-max mx-auto px-lg text-center">
+            <span className="material-symbols-outlined text-6xl text-secondary-fixed mb-sm" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+            <h1 className="text-display-lg-mobile md:text-display-lg text-on-primary mb-md">Your Eligibility Results</h1>
           </div>
         </section>
         <section className="section-padding">
-          <div className="container-max max-w-2xl">
+          <div className="max-w-container-max mx-auto px-lg max-w-2xl">
             <div className="card p-xl text-center mb-xl">
               <p className="text-label-lg text-on-surface-variant mb-xs">Estimated Loan Eligibility</p>
               <p className="text-display-lg text-primary font-bold">₹{eligible.toLocaleString('en-IN')}</p>
@@ -57,7 +58,7 @@ export default function Eligibility() {
                 {recs.map((r) => (
                   <div key={r.name} className="card p-md flex items-center justify-between">
                     <div className="flex items-center gap-md">
-                      <span className="material-symbols-outlined text-primary">check_circle</span>
+                      <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
                       <span className="text-body-md text-primary font-semibold">{r.name}</span>
                     </div>
                     <span className="text-label-lg text-secondary">{r.amount}</span>
@@ -79,16 +80,17 @@ export default function Eligibility() {
   }
 
   return (
-    <main>
-      <section className="pt-[80px] bg-gradient-to-br from-primary via-primary-container to-primary text-white section-padding">
-        <div className="container-max text-center">
-          <h1 className="text-display-lg-mobile md:text-display-lg mb-md">Check Your Loan Eligibility</h1>
+    <main className="mt-giant">
+      <section className="relative pt-xxl pb-giant bg-primary overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-container to-primary"></div>
+        <div className="relative z-10 max-w-container-max mx-auto px-lg text-center">
+          <h1 className="text-display-lg-mobile md:text-display-lg text-on-primary mb-md">Check Your Loan Eligibility</h1>
           <p className="text-body-lg text-on-primary-container max-w-2xl mx-auto">Find out how much you can borrow in just a few steps</p>
         </div>
       </section>
 
       <section className="section-padding">
-        <div className="container-max max-w-2xl">
+        <div className="max-w-container-max mx-auto px-lg max-w-2xl">
           <div className="flex items-center justify-center gap-sm mb-xl">
             {Array.from({ length: totalSteps }, (_, i) => i + 1).map((s) => (
               <div key={s} className="flex items-center">

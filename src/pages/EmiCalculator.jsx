@@ -38,16 +38,17 @@ export default function EmiCalculator() {
   const principalPercent = (amount / totalPayable) * 100
 
   return (
-    <main>
-      <section className="pt-[80px] bg-gradient-to-br from-primary via-primary-container to-primary text-white section-padding">
-        <div className="container-max text-center">
-          <h1 className="text-display-lg-mobile md:text-display-lg mb-md">EMI Calculator</h1>
+    <main className="mt-giant">
+      <section className="relative pt-xxl pb-giant bg-primary overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-container to-primary"></div>
+        <div className="relative z-10 max-w-container-max mx-auto px-lg text-center">
+          <h1 className="text-display-lg-mobile md:text-display-lg text-on-primary mb-md">EMI Calculator</h1>
           <p className="text-body-lg text-on-primary-container max-w-2xl mx-auto">Plan your finances better with our easy-to-use EMI calculator</p>
         </div>
       </section>
 
       <section className="section-padding">
-        <div className="container-max">
+        <div className="max-w-container-max mx-auto px-lg">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-xl">
             <div className="card p-xl">
               <h2 className="text-headline-md text-primary mb-lg">Loan Details</h2>
