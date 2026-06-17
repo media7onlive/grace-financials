@@ -139,10 +139,10 @@ export default function Application() {
                   <span className="material-symbols-outlined">call</span>
                   +91 97782 92234
                 </Link>
-                <Link to="/contact" className="flex items-center gap-md text-body-lg hover:underline">
-                  <span className="material-symbols-outlined">mail</span>
-                  info.gracefinancialconsultqncy@gmail.com
-                </Link>
+                <div className="flex items-start gap-md text-body-lg">
+                  <span className="material-symbols-outlined flex-shrink-0">mail</span>
+                  <span className="break-all">info.gracefinancialconsultancy@gmail.com</span>
+                </div>
               </div>
               <Link to="https://wa.me/919995533809" className="flex items-center gap-md mt-md bg-[#25D366] text-white p-md rounded-lg justify-center hover:shadow-lg transition-all">
                 <span className="material-symbols-outlined">chat</span>
