@@ -1,16 +1,57 @@
-# React + Vite
+# Grace Financial Consultancy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A loan consultancy web application built with React + Vite.
 
-Currently, two official plugins are available:
+## Loan Eligibility Calculator
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The eligibility calculator is on the `/eligibility` page and walks users through 4 steps.
 
-## React Compiler
+### Steps to Check Eligibility
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Monthly Income** — Select your monthly income (₹10,000 – ₹5,00,000)
+2. **Employment Type** — Choose salaried or self-employed
+3. **Existing EMIs** — Enter your current monthly EMI obligations
+4. **CIBIL Score** — Enter your CIBIL score (300–900)
 
-## Expanding the ESLint configuration
+### Calculation Logic
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+Eligibility = (Monthly Income - Existing EMIs) × Employment Multiplier × CIBIL Factor
+```
+
+**Employment Multiplier:**
+| Type | Multiplier |
+|---|---|
+| Salaried | 36× |
+| Self-Employed | 30× |
+
+**CIBIL Factor:**
+| Score Range | Factor |
+|---|---|
+| 750+ | 1.0 |
+| 650–749 | 0.7 |
+| Below 650 | 0.4 |
+
+**Example:**
+- Monthly Income: ₹50,000
+- Existing EMIs: ₹5,000
+- Employment: Salaried (36×)
+- CIBIL: 750+ (1.0)
+
+→ (50,000 - 5,000) × 36 × 1.0 = **₹16,20,000**
+
+### Recommended Loan Types
+
+Based on the calculated eligibility amount:
+
+| Eligibility | Loan Types |
+|---|---|
+| ≥ ₹3,00,000 | Personal Loan (up to ₹25 lakh) |
+| ≥ ₹5,00,000 | Vehicle Loan (up to ₹50 lakh) |
+| ≥ ₹10,00,000 | Home Loan (up ₹1 Cr) |
+| ≥ ₹20,00,000 | Business Loan (up to ₹50 lakh) |
+| Below ₹3,00,000 | Mudra Loan (up to ₹50,000) |
+
+### Source Code
+
+The calculation is in `src/pages/Eligibility.jsx` — function `calculateEligibility()` at line 14.

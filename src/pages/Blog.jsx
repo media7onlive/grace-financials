@@ -11,10 +11,17 @@ const posts = [
   { category: 'Grace Insights', date: 'Sep 15, 2024', title: 'The Grace Guarantee: Transparency in Every Loan Contract', excerpt: 'Discover why thousands of families trust Grace Financial for their most important life decisions. No hidden charges, ever.', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBn5AAztIMEaaYTU_01KzGGKrJcdnSLidR_UE1qmWxa4tJy4J6KcJGz0cQZJ6diNMANHmvDAuDQ1YxRpgHcZeWh1J7r8-5PRRpl-wcdmVkQrErEuIu-6nLWnM9UNd7BXXwCYxs7u4_Ftxyf_LNVwUw8KiIAU-LBYuRKHQplDqaq2z1B2N9_A15V5hx3xaBPX8Y5iJPl3WPi9Q2szij632dKBCKIMTMW3ySkyirAfq2tol6-eVbkZcsrgg' },
 ]
 
+const PER_PAGE = 3
+
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState('All Insights')
+  const [visibleCount, setVisibleCount] = useState(PER_PAGE)
 
   const filtered = activeCategory === 'All Insights' ? posts : posts.filter(p => p.category === activeCategory)
+  const visiblePosts = filtered.slice(0, visibleCount)
+  const hasMore = visibleCount < filtered.length
+
+  const handleLoadMore = () => setVisibleCount(prev => Math.min(prev + PER_PAGE, filtered.length))
 
   return (
     <main className="mt-giant">
@@ -32,7 +39,7 @@ export default function Blog() {
           </div>
           <div className="flex gap-sm mt-xl overflow-x-auto no-scrollbar py-sm">
             {categories.map((cat) => (
-              <button key={cat} onClick={() => setActiveCategory(cat)}
+              <button key={cat} onClick={() => { setActiveCategory(cat); setVisibleCount(PER_PAGE) }}
                 className={`px-lg py-sm rounded-full text-label-md whitespace-nowrap transition-colors ${
                   activeCategory === cat
                     ? 'bg-primary text-on-primary'
@@ -83,7 +90,7 @@ export default function Blog() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-xl">
-              {filtered.map((post, i) => (
+              {visiblePosts.map((post, i) => (
                 <article key={i} className="bg-white rounded-xl overflow-hidden custom-shadow group cursor-pointer border border-outline-variant/30">
                   <div className="aspect-video overflow-hidden relative">
                     <img alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={post.image} />
@@ -103,11 +110,13 @@ export default function Blog() {
               ))}
             </div>
           )}
-          <div className="mt-giant flex justify-center">
-            <button className="border-2 border-primary text-primary px-xxl py-md rounded-lg text-label-lg hover:bg-primary hover:text-on-primary transition-all">
-              Load More Articles
-            </button>
-          </div>
+          {hasMore && (
+            <div className="mt-giant flex justify-center">
+              <button onClick={handleLoadMore} className="border-2 border-primary text-primary px-xxl py-md rounded-lg text-label-lg hover:bg-primary hover:text-on-primary transition-all">
+                Load More Articles
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
