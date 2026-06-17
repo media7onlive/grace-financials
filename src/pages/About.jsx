@@ -106,11 +106,11 @@ export default function About() {
       {/* Why Choose Grace */}
       <section className="py-giant bg-surface">
         <div className="max-w-container-max mx-auto px-lg grid grid-cols-1 md:grid-cols-2 gap-xxl items-center">
-          <div className="relative aspect-square">
+          <div className="relative aspect-[5/6]">
             <div className="absolute inset-0 bg-secondary/5 rounded-full scale-110 animate-pulse"></div>
             <img
               className="relative z-10 w-full h-full object-cover rounded-2xl shadow-xl"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpfLMMyKMSuZ7-6rBW1jStfssy2yBT0l4nYnTR6MhGuSXVeKcA_LqP7fTGt99RCY_wYQ_ximMHyE9qL3abHs9VY7Z9pz-gQruVMHNcZBjNnRd3xzqJqJNiFXPQWn-sQq0qpWc-rUeEfGMmqtG59QOj1Z63Z1DWKWapjZRMYxm9uDvOFDls3gFA2QBncpDuIeNrlPHOgzXjgypPbxSniNU3petuH3-wN_rNWDVgCR6wNE-M2lWcnSvmUA"
+              src="https://scontent.fcok8-1.fna.fbcdn.net/v/t39.30808-6/724534665_122140416873117223_6368172018897229239_n.jpg?stp=dst-jpg_tt6&cstp=mx1122x1402&ctp=s1122x1402&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=o98MXO9qAlcQ7kNvwEmo2u5&_nc_oc=AdrImlxxRdnyw3NAqpYy9nqqUuB8suCZ9rKSJNhplO-PfiRmkI1MGv7OliVWAsJ1kMI&_nc_zt=23&_nc_ht=scontent.fcok8-1.fna&_nc_gid=wx9fmvQVIg8T8iX1ReSMDA&_nc_ss=7b2a8&oh=00_Af_y0gQk1ME_ST4Xlw3GaG_uxdg3P--aWCG3-IF53GlG-A&oe=6A3858D6"
               alt="Financial Advisor"
             />
           </div>
