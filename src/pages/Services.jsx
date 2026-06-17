@@ -25,8 +25,8 @@ export default function Services() {
             <Link to="/apply" className="bg-primary text-on-primary px-giant py-md rounded-lg text-label-lg hover:shadow-lg transition-all inline-block">
               Schedule Consultation
             </Link>
-            <Link to="/services" className="border-2 border-secondary text-secondary px-giant py-md rounded-lg text-label-lg hover:bg-secondary/5 transition-all inline-block">
-              View All Products
+            <Link to="/eligibility" className="border-2 border-secondary text-secondary px-giant py-md rounded-lg text-label-lg hover:bg-secondary/5 transition-all inline-block">
+              Check your Eligibility
             </Link>
           </div>
         </div>
@@ -38,7 +38,10 @@ export default function Services() {
 
           {/* Vehicle Loan */}
           <section className="md:col-span-8 group relative overflow-hidden rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card">
-            <div className="flex flex-col md:flex-row gap-xl items-start">
+              <div className="absolute inset-0 z-0">
+                <img className="w-full h-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-700" alt="" src="https://www.esaar.in/s3-ap-south-1.amazonaws.com/images-bucket-efin-uat/wp-content/uploads/2020/03/28135131/s-vehicle.jpg" />
+              </div>
+            <div className="flex flex-col md:flex-row gap-xl items-start relative z-10">
               <div className="w-16 h-16 rounded-xl bg-secondary-container/10 flex items-center justify-center flex-shrink-0">
                 <span className="material-symbols-outlined text-secondary text-3xl">directions_car</span>
               </div>
@@ -81,8 +84,11 @@ export default function Services() {
           </section>
 
           {/* Home Loan */}
-          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card">
-            <span className="material-symbols-outlined text-secondary text-4xl mb-lg block">home_work</span>
+          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card relative overflow-hidden">
+            <div className="absolute inset-0 z-0">
+              <img className="w-full h-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-700" alt="" src="https://infiniumrealty.com/_next/image?url=%2Fimages%2Fblogs%2Fhome-loan.jpg&w=3840&q=75" />
+            </div>
+            <span className="material-symbols-outlined text-secondary text-4xl mb-lg block relative z-10">home_work</span>
             <h2 className="text-headline-sm text-primary mb-sm">HOME LOAN</h2>
             <p className="text-body-sm text-on-surface-variant mb-lg">Build, buy, or renovate your sanctuary with home finance starting at attractive rates.</p>
             <div className="space-y-md mb-lg">
@@ -99,7 +105,7 @@ export default function Services() {
           <section className="md:col-span-8 rounded-xl border border-outline-variant/30 bg-white overflow-hidden relative group service-hover-card">
             <div className="absolute inset-0 z-0">
               <img
-                className="w-full h-full object-cover opacity-5 grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-700"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuATAa3X43iNxn3WY0_uFyCI4yiOiidU5Te6lX24DbHgtjxcqnZK7dQVMBLTV5WxfobdpmsFJj0q5E_LTxnzgvwpLI2frYE_wIlqPCkMFWOOTieLC3or8vq3dg8mrHYxxvnwEyhcdoykExuU-Tq1wbS758Wa0PwAYuoUGqnvcH03vCmBU5mdMDhmu545i6C3KbTD5oFSSSyA-Ma-T-KK3-WNiJG9SRj2c-xk2Vd29n6KDkeNhveVgy6Ezw"
                 alt=""
               />
@@ -171,8 +177,11 @@ export default function Services() {
           </section>
 
           {/* Education Loan */}
-          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card">
-            <span className="material-symbols-outlined text-secondary text-4xl mb-lg block">school</span>
+          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card relative overflow-hidden">
+            <div className="absolute inset-0 z-0">
+              <img className="w-full h-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-700" alt="" src="https://www.cashe.co.in/wp-content/uploads/2024/12/education-loan-interest-rates-title-image.png" />
+            </div>
+            <span className="material-symbols-outlined text-secondary text-4xl mb-lg block relative z-10">school</span>
             <h2 className="text-headline-sm text-primary mb-sm">EDUCATION LOAN</h2>
             <p className="text-body-sm text-on-surface-variant mb-lg">Invest in your future with loans for global education, covering tuition, travel, and stay.</p>
             <ul className="space-y-sm mb-xl">
@@ -191,8 +200,11 @@ export default function Services() {
           </section>
 
           {/* Property Loan */}
-          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card">
-            <span className="material-symbols-outlined text-secondary text-4xl mb-lg block">location_city</span>
+          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card relative overflow-hidden">
+            <div className="absolute inset-0 z-0">
+              <img className="w-full h-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-700" alt="" src="https://img.etimg.com/thumb/width-300,height-225,imgsize-34604,resizemode-75,msid-98727474/wealth/borrow/tax-savings-home-loan-top-up-could-be-the-cheapest-loan-available-for-you/top-up-home-loan-benefits.jpg" />
+            </div>
+            <span className="material-symbols-outlined text-secondary text-4xl mb-lg block relative z-10">location_city</span>
             <h2 className="text-headline-sm text-primary mb-sm">PROPERTY LOAN</h2>
             <p className="text-body-sm text-on-surface-variant mb-lg">Leverage your residential or commercial property assets to unlock liquidity for your needs.</p>
             <div className="flex flex-col gap-sm mb-xl">
@@ -207,8 +219,11 @@ export default function Services() {
           </section>
 
           {/* Mudra Loan */}
-          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-surface-container p-xl service-hover-card">
-            <span className="material-symbols-outlined text-primary text-4xl mb-lg block">payments</span>
+          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-surface-container p-xl service-hover-card relative overflow-hidden">
+            <div className="absolute inset-0 z-0">
+              <img className="w-full h-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-700" alt="" src="https://5.imimg.com/data5/SELLER/Default/2024/3/402801898/JU/BT/QP/138647904/mudra-loan-500x500.png" />
+            </div>
+            <span className="material-symbols-outlined text-primary text-4xl mb-lg block relative z-10">payments</span>
             <h2 className="text-headline-sm text-primary mb-sm">MUDRA LOAN</h2>
             <p className="text-body-sm text-on-surface-variant mb-lg">Government-backed schemes to empower micro-enterprises across various growth stages.</p>
             <div className="grid grid-cols-3 gap-xs mb-xl">
@@ -232,7 +247,7 @@ export default function Services() {
           <div className="flex flex-col sm:flex-row justify-center gap-md">
             <a
               className="flex items-center justify-center gap-md bg-[#25D366] text-white px-xl py-md rounded-lg text-label-lg hover:opacity-90"
-              href="https://wa.me/919876543210"
+              href="https://wa.me/919995533809"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -241,7 +256,7 @@ export default function Services() {
             </a>
             <Link to="/contact" className="flex items-center justify-center gap-md bg-secondary text-on-secondary px-xl py-md rounded-lg text-label-lg">
               <span className="material-symbols-outlined">call</span>
-              Call +91 98XXX XXXXX
+              Call +91 99955 33809
             </Link>
           </div>
         </div>
