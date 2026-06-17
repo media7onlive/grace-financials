@@ -68,7 +68,7 @@ export default function Eligibility() {
             </div>
             <p className="text-label-sm text-on-surface-variant text-center mb-xl px-lg">This is an indicative eligibility estimate only. Final approval and loan amount are subject to lender policies, income verification, credit assessment, and documentation.</p>
             <div className="flex flex-col sm:flex-row gap-md justify-center">
-              <Link to="/contact" className="btn-primary text-center">Proceed to Application</Link>
+              <Link to="/apply" className="btn-primary text-center">Proceed to Application</Link>
               <Link to="/contact" className="btn-secondary text-center">Speak to an Advisor</Link>
             </div>
             <button onClick={() => { setShowResult(false); setStep(1) }} className="block mx-auto mt-lg text-label-lg text-secondary hover:text-primary transition-colors">

@@ -29,7 +29,7 @@ export default function Home() {
               Experience simplified loan processes tailored for individuals and businesses. From dream homes to scaling enterprises, we guide you through every financial milestone with expertise and transparency.
             </p>
             <div className="flex flex-wrap gap-md">
-              <Link to="/contact" className="bg-secondary text-white px-xl py-md rounded-lg font-label-lg hover:bg-secondary/90 transition-colors inline-block">
+              <Link to="/apply" className="bg-secondary text-white px-xl py-md rounded-lg font-label-lg hover:bg-secondary/90 transition-colors inline-block">
                 Get Started
               </Link>
               <Link to="/services" className="border-2 border-secondary text-secondary-fixed px-xl py-md rounded-lg font-label-lg hover:bg-secondary/10 transition-colors inline-block">
@@ -214,7 +214,7 @@ export default function Home() {
               Don't let financial barriers stop you. Our experts are ready to guide you to the best loan products available in the market.
             </p>
             <div className="flex flex-wrap justify-center gap-md relative z-10">
-              <Link to="/contact" className="bg-secondary text-white px-xl py-md rounded-lg font-label-lg hover:scale-105 transition-transform shadow-lg inline-block">
+              <Link to="/apply" className="bg-secondary text-white px-xl py-md rounded-lg font-label-lg hover:scale-105 transition-transform shadow-lg inline-block">
                 Apply Online Now
               </Link>
               <Link to="/contact" className="bg-white text-primary px-xl py-md rounded-lg font-label-lg hover:bg-surface transition-colors inline-block">
