@@ -134,7 +134,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="mt-giant w-full h-[500px] bg-surface-container relative overflow-hidden">
+      <a href="https://www.google.com/maps/place/Media7/@10.0146413,76.3015766,249m/data=!3m1!1e3!4m6!3m5!1s0x3b080da588e92727:0xfb57d7fdb58a3559!8m2!3d10.014936!4d76.3018219!16s%2Fg%2F11mcyq76md?entry=ttu&g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="mt-giant w-full h-[500px] bg-surface-container relative overflow-hidden block">
         <div className="absolute inset-0 grayscale opacity-80 hover:grayscale-0 transition-all duration-700">
           <img className="w-full h-full object-cover" alt=""
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuACrep7j_SvwojIBudv3U_ygD7-0sqQytHyeFCZUotZvKf8oE1zMLP_39HRPniVWwKiOg5llHyNPoBh0Iij1Mm0wwiVF20hFRdpYKQsOWYcr6bJ-_VEC0qD9MONviEK6LhvyfdgDjAe6Q0v5CweOmmjl5J1ahsaKLcC5xSS2ujS-G-BAdEzb3esQn6lnvZ0sp30EdDGUvD1RiEvI53rqZhvznsF0RrgILiHT8orLDh6wao2rV_mQKrlLw" />
@@ -145,7 +145,7 @@ export default function Contact() {
             <span className="text-headline-sm">We are here</span>
           </div>
         </div>
-      </section>
+      </a>
     </main>
   )
 }
