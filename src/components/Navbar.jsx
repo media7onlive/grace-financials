@@ -43,7 +43,7 @@ export default function Navbar() {
             Apply Now
           </Link>
           <button
-            className="lg:hidden p-sm text-primary"
+            className="lg:hidden p-sm bg-surface/80 rounded-lg text-on-surface shadow-sm"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >

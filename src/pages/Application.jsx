@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 
 export default function Application() {
+  const [searchParams] = useSearchParams()
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const loanType = searchParams.get('type') || ''
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -48,7 +50,7 @@ export default function Application() {
               </div>
               <div className="space-y-xs">
                 <label className="text-label-md text-on-surface-variant">Loan Type *</label>
-                <select className="w-full bg-surface p-md rounded-lg border border-outline-variant text-body-md" required>
+                <select className="w-full bg-surface p-md rounded-lg border border-outline-variant text-body-md" defaultValue={loanType} required>
                   <option value="">Select loan type</option>
                   <option>Home Loan</option>
                   <option>Vehicle Loan</option>

@@ -22,7 +22,7 @@ export default function Services() {
             From personal milestones to business expansions, we provide structured credit solutions with transparency and speed.
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-md">
-            <Link to="/apply" className="bg-primary text-on-primary px-giant py-md rounded-lg text-label-lg hover:shadow-lg transition-all inline-block">
+            <Link to="/contact" className="bg-primary text-on-primary px-giant py-md rounded-lg text-label-lg hover:shadow-lg transition-all inline-block">
               Schedule Consultation
             </Link>
             <Link to="/eligibility" className="border-2 border-secondary text-secondary px-giant py-md rounded-lg text-label-lg hover:bg-secondary/5 transition-all inline-block">
@@ -56,7 +56,7 @@ export default function Services() {
                   <span className="px-md py-xs bg-surface-container-low rounded-full text-on-surface-variant text-label-md">Used SUVs</span>
                   <span className="px-md py-xs bg-surface-container-low rounded-full text-on-surface-variant text-label-md">Fleet Finance</span>
                 </div>
-                <Link to="/apply" className="bg-primary text-on-primary px-lg py-sm rounded-lg text-label-lg hover:opacity-90 inline-block">Apply Now</Link>
+                <Link to="/apply?type=Vehicle+Loan" className="bg-primary text-on-primary px-lg py-sm rounded-lg text-label-lg hover:opacity-90 inline-block">Apply Now</Link>
               </div>
             </div>
           </section>
@@ -80,25 +80,27 @@ export default function Services() {
                 ))}
               </ul>
             </div>
-            <Link to="/apply" className="w-full bg-on-primary text-primary py-sm rounded-lg text-label-lg text-center inline-block">Apply Now</Link>
+            <Link to="/apply?type=Personal+Loan" className="w-full bg-on-primary text-primary py-sm rounded-lg text-label-lg text-center inline-block">Apply Now</Link>
           </section>
 
           {/* Home Loan */}
-          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card relative overflow-hidden">
+          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card relative overflow-hidden group">
             <div className="absolute inset-0 z-0">
               <img className="w-full h-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-700" alt="" src="https://infiniumrealty.com/_next/image?url=%2Fimages%2Fblogs%2Fhome-loan.jpg&w=3840&q=75" />
             </div>
-            <span className="material-symbols-outlined text-secondary text-4xl mb-lg block relative z-10">home_work</span>
-            <h2 className="text-headline-sm text-primary mb-sm">HOME LOAN</h2>
-            <p className="text-body-sm text-on-surface-variant mb-lg">Build, buy, or renovate your sanctuary with home finance starting at attractive rates.</p>
-            <div className="space-y-md mb-lg">
-              <div className="p-sm bg-surface-container rounded-lg font-label-md text-on-surface-variant">Purchase & Construction</div>
-              <div className="p-sm bg-surface-container rounded-lg font-label-md text-on-surface-variant">Home Renovation</div>
-              <div className="p-sm bg-surface-container rounded-lg font-label-md text-on-surface-variant">Balance Transfer</div>
+            <div className="relative z-10">
+              <span className="material-symbols-outlined text-secondary text-4xl mb-lg block">home_work</span>
+              <h2 className="text-headline-sm text-primary mb-sm">HOME LOAN</h2>
+              <p className="text-body-sm text-on-surface-variant mb-lg">Build, buy, or renovate your sanctuary with home finance starting at attractive rates.</p>
+              <div className="space-y-md mb-lg">
+                <div className="p-sm bg-surface-container rounded-lg font-label-md text-on-surface-variant">Purchase & Construction</div>
+                <div className="p-sm bg-surface-container rounded-lg font-label-md text-on-surface-variant">Home Renovation</div>
+                <div className="p-sm bg-surface-container rounded-lg font-label-md text-on-surface-variant">Balance Transfer</div>
+              </div>
+              <Link to="/apply?type=Home+Loan" className="text-secondary font-label-lg flex items-center gap-sm group">
+                Apply Now <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </Link>
             </div>
-            <Link to="/apply" className="text-secondary font-label-lg flex items-center gap-sm group">
-              Apply Now <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-            </Link>
           </section>
 
           {/* Business Loan */}
@@ -128,13 +130,13 @@ export default function Services() {
                     <span className="font-label-md">Easy Docs</span>
                   </div>
                 </div>
-                <Link to="/apply" className="bg-primary text-on-primary px-lg py-sm rounded-lg text-label-lg inline-block">Apply Now</Link>
+                <Link to="/apply?type=Business+Loan" className="bg-primary text-on-primary px-lg py-sm rounded-lg text-label-lg inline-block">Apply Now</Link>
               </div>
               <div className="hidden md:block w-1/3">
                 <div className="p-lg bg-surface-container-highest rounded-xl border border-outline/20">
                   <h4 className="font-label-lg mb-sm">MSME Special</h4>
                   <p className="text-body-sm mb-md">Special interest waivers for registered MSMEs.</p>
-                  <Link to="/apply" className="text-secondary text-label-sm underline">Register MSME Now</Link>
+                  <Link to="/apply?type=Business+Loan" className="text-secondary text-label-sm underline">Register MSME Now</Link>
                 </div>
               </div>
             </div>
@@ -165,7 +167,7 @@ export default function Services() {
                   <span className="text-label-sm text-on-primary-container">Deployment</span>
                 </div>
               </div>
-              <Link to="/apply" className="btn-premium px-giant py-md rounded-lg text-label-lg shadow-xl inline-block">Apply Now</Link>
+              <Link to="/apply?type=Solar+Finance" className="btn-premium px-giant py-md rounded-lg text-label-lg shadow-xl inline-block">Apply Now</Link>
             </div>
             <div className="relative z-10 w-full md:w-1/3 aspect-square rounded-xl overflow-hidden border border-white/10">
               <img
@@ -177,63 +179,69 @@ export default function Services() {
           </section>
 
           {/* Education Loan */}
-          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card relative overflow-hidden">
+          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card relative overflow-hidden group">
             <div className="absolute inset-0 z-0">
               <img className="w-full h-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-700" alt="" src="https://www.cashe.co.in/wp-content/uploads/2024/12/education-loan-interest-rates-title-image.png" />
             </div>
-            <span className="material-symbols-outlined text-secondary text-4xl mb-lg block relative z-10">school</span>
-            <h2 className="text-headline-sm text-primary mb-sm">EDUCATION LOAN</h2>
-            <p className="text-body-sm text-on-surface-variant mb-lg">Invest in your future with loans for global education, covering tuition, travel, and stay.</p>
-            <ul className="space-y-sm mb-xl">
-              {[
-                { icon: 'flight_takeoff', label: 'Study Abroad' },
-                { icon: 'menu_book', label: 'Tuition Fees' },
-                { icon: 'laptop_mac', label: 'Equipment & Stay' },
-              ].map((item) => (
-                <li key={item.label} className="flex items-center gap-sm font-label-md text-on-surface-variant">
-                  <span className="material-symbols-outlined text-secondary text-sm">{item.icon}</span>
-                  {item.label}
-                </li>
-              ))}
-            </ul>
-            <Link to="/apply" className="w-full border border-secondary text-secondary py-sm rounded-lg text-label-lg hover:bg-secondary/5 block text-center">Apply Now</Link>
+            <div className="relative z-10">
+              <span className="material-symbols-outlined text-secondary text-4xl mb-lg block">school</span>
+              <h2 className="text-headline-sm text-primary mb-sm">EDUCATION LOAN</h2>
+              <p className="text-body-sm text-on-surface-variant mb-lg">Invest in your future with loans for global education, covering tuition, travel, and stay.</p>
+              <ul className="space-y-sm mb-xl">
+                {[
+                  { icon: 'flight_takeoff', label: 'Study Abroad' },
+                  { icon: 'menu_book', label: 'Tuition Fees' },
+                  { icon: 'laptop_mac', label: 'Equipment & Stay' },
+                ].map((item) => (
+                  <li key={item.label} className="flex items-center gap-sm font-label-md text-on-surface-variant">
+                    <span className="material-symbols-outlined text-secondary text-sm">{item.icon}</span>
+                    {item.label}
+                  </li>
+                ))}
+              </ul>
+              <Link to="/apply?type=Education+Loan" className="w-full border border-secondary text-secondary py-sm rounded-lg text-label-lg hover:bg-secondary/5 block text-center">Apply Now</Link>
+            </div>
           </section>
 
           {/* Property Loan */}
-          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card relative overflow-hidden">
+          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card relative overflow-hidden group">
             <div className="absolute inset-0 z-0">
               <img className="w-full h-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-700" alt="" src="https://img.etimg.com/thumb/width-300,height-225,imgsize-34604,resizemode-75,msid-98727474/wealth/borrow/tax-savings-home-loan-top-up-could-be-the-cheapest-loan-available-for-you/top-up-home-loan-benefits.jpg" />
             </div>
-            <span className="material-symbols-outlined text-secondary text-4xl mb-lg block relative z-10">location_city</span>
-            <h2 className="text-headline-sm text-primary mb-sm">PROPERTY LOAN</h2>
-            <p className="text-body-sm text-on-surface-variant mb-lg">Leverage your residential or commercial property assets to unlock liquidity for your needs.</p>
-            <div className="flex flex-col gap-sm mb-xl">
-              {['Commercial', 'Residential'].map((item) => (
-                <div key={item} className="flex justify-between items-center py-xs border-b border-outline-variant/30">
-                  <span className="font-label-md">{item}</span>
-                  <span className="material-symbols-outlined text-sm">chevron_right</span>
-                </div>
-              ))}
+            <div className="relative z-10">
+              <span className="material-symbols-outlined text-secondary text-4xl mb-lg block">location_city</span>
+              <h2 className="text-headline-sm text-primary mb-sm">PROPERTY LOAN</h2>
+              <p className="text-body-sm text-on-surface-variant mb-lg">Leverage your residential or commercial property assets to unlock liquidity for your needs.</p>
+              <div className="flex flex-col gap-sm mb-xl">
+                {['Commercial', 'Residential'].map((item) => (
+                  <div key={item} className="flex justify-between items-center py-xs border-b border-outline-variant/30">
+                    <span className="font-label-md">{item}</span>
+                    <span className="material-symbols-outlined text-sm">chevron_right</span>
+                  </div>
+                ))}
+              </div>
+              <Link to="/apply?type=Property+Loan" className="w-full bg-primary text-on-primary py-sm rounded-lg text-label-lg block text-center">Apply Now</Link>
             </div>
-            <Link to="/apply" className="w-full bg-primary text-on-primary py-sm rounded-lg text-label-lg block text-center">Apply Now</Link>
           </section>
 
           {/* Mudra Loan */}
-          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-surface-container p-xl service-hover-card relative overflow-hidden">
+          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-surface-container p-xl service-hover-card relative overflow-hidden group">
             <div className="absolute inset-0 z-0">
               <img className="w-full h-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-700" alt="" src="https://5.imimg.com/data5/SELLER/Default/2024/3/402801898/JU/BT/QP/138647904/mudra-loan-500x500.png" />
             </div>
-            <span className="material-symbols-outlined text-primary text-4xl mb-lg block relative z-10">payments</span>
-            <h2 className="text-headline-sm text-primary mb-sm">MUDRA LOAN</h2>
-            <p className="text-body-sm text-on-surface-variant mb-lg">Government-backed schemes to empower micro-enterprises across various growth stages.</p>
-            <div className="grid grid-cols-3 gap-xs mb-xl">
-              {['SHISHU', 'KISHOR', 'TARUN'].map((item) => (
-                <div key={item} className="text-center p-xs bg-white rounded border border-outline-variant/50">
-                  <div className="text-label-sm text-primary">{item}</div>
-                </div>
-              ))}
+            <div className="relative z-10">
+              <span className="material-symbols-outlined text-primary text-4xl mb-lg block">payments</span>
+              <h2 className="text-headline-sm text-primary mb-sm">MUDRA LOAN</h2>
+              <p className="text-body-sm text-on-surface-variant mb-lg">Government-backed schemes to empower micro-enterprises across various growth stages.</p>
+              <div className="grid grid-cols-3 gap-xs mb-xl">
+                {['SHISHU', 'KISHOR', 'TARUN'].map((item) => (
+                  <div key={item} className="text-center p-xs bg-white rounded border border-outline-variant/50">
+                    <div className="text-label-sm text-primary">{item}</div>
+                  </div>
+                ))}
+              </div>
+              <Link to="/apply?type=Mudra+Loan" className="w-full bg-primary text-on-primary py-sm rounded-lg text-label-lg block text-center">Apply Now</Link>
             </div>
-            <Link to="/apply" className="w-full bg-primary text-on-primary py-sm rounded-lg text-label-lg block text-center">Apply Now</Link>
           </section>
 
         </div>
