@@ -1,19 +1,18 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Contact() {
-  const [submitting, setSubmitting] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
-
   const handleSubmit = (e) => {
     e.preventDefault()
-    setSubmitting(true)
-    setTimeout(() => {
-      setSubmitting(false)
-      setSubmitted(true)
-      e.target.reset()
-      setTimeout(() => setSubmitted(false), 3000)
-    }, 1500)
+    const form = new FormData(e.target)
+    const name = form.get('name')
+    const phone = form.get('phone')
+    const email = form.get('email')
+    const loanType = form.get('loanType')
+    const message = form.get('message')
+
+    const text = `Hi Grace Financial,%0A%0A${encodeURIComponent('I would like to enquire about a loan.')}%0A%0A${encodeURIComponent(`Name: ${name}`)}%0A${encodeURIComponent(`Phone: ${phone}`)}%0A${encodeURIComponent(`Email: ${email}`)}%0A${encodeURIComponent(`Loan Type: ${loanType}`)}%0A${encodeURIComponent(`Message: ${message}`)}`
+
+    window.open(`https://wa.me/919995533809?text=${text}`, '_blank')
   }
 
   return (
@@ -32,19 +31,19 @@ export default function Contact() {
             <form className="grid grid-cols-1 md:grid-cols-2 gap-lg" onSubmit={handleSubmit}>
               <div className="space-y-xs">
                 <label className="text-label-md text-on-surface-variant">Full Name</label>
-                <input className="w-full bg-surface p-md rounded-lg border border-outline-variant text-body-md" placeholder="your full name" type="text" required />
+                <input className="w-full bg-surface p-md rounded-lg border border-outline-variant text-body-md" placeholder="your full name" type="text" name="name" required />
               </div>
               <div className="space-y-xs">
                 <label className="text-label-md text-on-surface-variant">Phone Number</label>
-                <input className="w-full bg-surface p-md rounded-lg border border-outline-variant text-body-md" placeholder="your phone number" type="tel" required />
+                <input className="w-full bg-surface p-md rounded-lg border border-outline-variant text-body-md" placeholder="your phone number" type="tel" name="phone" required />
               </div>
               <div className="space-y-xs">
                 <label className="text-label-md text-on-surface-variant">Email Address</label>
-                <input className="w-full bg-surface p-md rounded-lg border border-outline-variant text-body-md" placeholder="your email address" type="email" required />
+                <input className="w-full bg-surface p-md rounded-lg border border-outline-variant text-body-md" placeholder="your email address" type="email" name="email" required />
               </div>
               <div className="space-y-xs">
                 <label className="text-label-md text-on-surface-variant">Loan Type</label>
-                <select className="w-full bg-surface p-md rounded-lg border border-outline-variant text-body-md">
+                <select className="w-full bg-surface p-md rounded-lg border border-outline-variant text-body-md" name="loanType">
                   <option>Home Loan</option>
                   <option>Vehicle Loan</option>
                   <option>Business Loan</option>
@@ -53,20 +52,12 @@ export default function Contact() {
               </div>
               <div className="md:col-span-2 space-y-xs">
                 <label className="text-label-md text-on-surface-variant">Message</label>
-                <textarea className="w-full bg-surface p-md rounded-lg border border-outline-variant text-body-md" placeholder="Tell us about your requirements..." rows="4"></textarea>
+                <textarea className="w-full bg-surface p-md rounded-lg border border-outline-variant text-body-md" placeholder="Tell us about your requirements..." name="message" rows="4"></textarea>
               </div>
               <div className="md:col-span-2 mt-md">
-                <button type="submit" disabled={submitting}
-                  className={`w-full py-md rounded-lg text-headline-sm transition-all flex justify-center items-center gap-sm ${
-                    submitted ? 'bg-emerald-600 text-white' : 'bg-primary text-on-primary hover:opacity-90'
-                  }`}>
-                  {submitting ? (
-                    <><span className="material-symbols-outlined animate-spin">refresh</span> Submitting...</>
-                  ) : submitted ? (
-                    <><span className="material-symbols-outlined">check_circle</span> Success</>
-                  ) : (
-                    <>Submit Enquiry <span className="material-symbols-outlined">send</span></>
-                  )}
+                <button type="submit"
+                  className="w-full py-md rounded-lg text-headline-sm transition-all flex justify-center items-center gap-sm bg-primary text-on-primary hover:opacity-90">
+                  Submit Enquiry <span className="material-symbols-outlined">send</span>
                 </button>
               </div>
             </form>
@@ -81,8 +72,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-label-md text-on-surface-variant">Phone</p>
-                  <p className="text-body-lg text-primary">+91 99955 33809</p>
-                  <p className="text-body-md text-on-surface-variant">+91 97782 92234</p>
+                  <a href="tel:+9199955333809" className="text-body-lg text-primary hover:underline block">+91 99955 33809</a>
+                  <a href="tel:+9197782292234" className="text-body-md text-on-surface-variant hover:underline block">+91 97782 92234</a>
                 </div>
               </div>
               <div className="flex gap-lg items-start">
@@ -123,7 +114,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <Link to="https://wa.me/919820012345" className="bg-[#25D366] text-white p-lg rounded-xl flex items-center justify-between text-headline-sm hover:shadow-xl transition-all group">
+            <Link to="https://wa.me/919995533809" className="bg-[#25D366] text-white p-lg rounded-xl flex items-center justify-between text-headline-sm hover:shadow-xl transition-all group">
               <div className="flex items-center gap-md">
                 <span className="material-symbols-outlined text-[32px]">chat</span>
                 <span>WhatsApp Us</span>
