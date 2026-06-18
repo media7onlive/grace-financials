@@ -22,10 +22,15 @@ export default function Application() {
 
   return (
     <main className="mt-giant">
+      <style>{`
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .anim-hero { animation: fadeInUp 0.8s ease-out both; }
+        .anim-hero-delay { animation: fadeInUp 0.8s ease-out 0.3s both; }
+      `}</style>
       <section className="bg-gradient-to-br from-primary via-primary-container to-primary py-xxl text-on-primary">
         <div className="max-w-container-max mx-auto px-lg">
-          <h1 className="text-display-lg mb-md">Apply Now</h1>
-          <p className="text-body-lg max-w-2xl opacity-90">Submit your loan application and our team will get back to you within 24 hours.</p>
+          <h1 className="anim-hero text-display-lg mb-md">Apply Now</h1>
+          <p className="anim-hero-delay text-body-lg max-w-2xl opacity-90">Submit your loan application and our team will get back to you within 24 hours.</p>
         </div>
       </section>
 

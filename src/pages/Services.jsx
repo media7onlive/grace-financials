@@ -2,8 +2,15 @@ import { useReveal, revealStyle } from '../hooks/useReveal'
 import { Link } from 'react-router-dom'
 
 export default function Services() {
-  const [gridRef, gridVis] = useReveal()
   const [ctaRef, ctaVis] = useReveal()
+  const [c1Ref, c1Vis] = useReveal()
+  const [c2Ref, c2Vis] = useReveal()
+  const [c3Ref, c3Vis] = useReveal()
+  const [c4Ref, c4Vis] = useReveal()
+  const [c5Ref, c5Vis] = useReveal()
+  const [c6Ref, c6Vis] = useReveal()
+  const [c7Ref, c7Vis] = useReveal()
+  const [c8Ref, c8Vis] = useReveal()
 
   return (
     <main className="mt-giant">
@@ -37,11 +44,11 @@ export default function Services() {
       </header>
 
       {/* Services Grid - Bento Style */}
-      <div ref={gridRef} className="max-w-container-max mx-auto px-lg py-xxl" style={revealStyle(gridVis)}>
+      <div className="max-w-container-max mx-auto px-lg py-xxl">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-lg">
 
           {/* Vehicle Loan */}
-          <section className="md:col-span-8 group relative overflow-hidden rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card">
+          <section ref={c1Ref} style={revealStyle(c1Vis)} className="md:col-span-8 group relative overflow-hidden rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card">
               <div className="absolute inset-0 z-0">
                 <img className="w-full h-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-700" alt="" src="https://www.esaar.in/s3-ap-south-1.amazonaws.com/images-bucket-efin-uat/wp-content/uploads/2020/03/28135131/s-vehicle.jpg" />
               </div>
@@ -66,7 +73,7 @@ export default function Services() {
           </section>
 
           {/* Personal Loan */}
-          <section className="md:col-span-4 bg-primary text-on-primary rounded-xl p-xl flex flex-col justify-between service-hover-card">
+          <section ref={c2Ref} style={revealStyle(c2Vis)} className="md:col-span-4 bg-primary text-on-primary rounded-xl p-xl flex flex-col justify-between service-hover-card">
             <div>
               <span className="material-symbols-outlined text-4xl mb-lg block">person</span>
               <h2 className="text-headline-md mb-sm">PERSONAL LOAN</h2>
@@ -88,7 +95,7 @@ export default function Services() {
           </section>
 
           {/* Home Loan */}
-          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card relative overflow-hidden group">
+          <section ref={c3Ref} style={revealStyle(c3Vis)} className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card relative overflow-hidden group">
             <div className="absolute inset-0 z-0">
               <img className="w-full h-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-700" alt="" src="https://infiniumrealty.com/_next/image?url=%2Fimages%2Fblogs%2Fhome-loan.jpg&w=3840&q=75" />
             </div>
@@ -108,7 +115,7 @@ export default function Services() {
           </section>
 
           {/* Business Loan */}
-          <section className="md:col-span-8 rounded-xl border border-outline-variant/30 bg-white overflow-hidden relative group service-hover-card">
+          <section ref={c4Ref} style={revealStyle(c4Vis)} className="md:col-span-8 rounded-xl border border-outline-variant/30 bg-white overflow-hidden relative group service-hover-card">
             <div className="absolute inset-0 z-0">
               <img
                 className="w-full h-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-700"
@@ -147,7 +154,7 @@ export default function Services() {
           </section>
 
           {/* Solar Finance - Premium Card */}
-          <section className="md:col-span-12 rounded-2xl bg-[#0B2147] text-white p-xl md:p-xxl flex flex-col md:flex-row items-center gap-xxl relative overflow-hidden">
+          <section ref={c5Ref} style={revealStyle(c5Vis)} className="md:col-span-12 rounded-2xl bg-[#0B2147] text-white p-xl md:p-xxl flex flex-col md:flex-row items-center gap-xxl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
             <div className="relative z-10 flex-grow">
               <div className="flex items-center gap-md mb-lg">
@@ -183,7 +190,7 @@ export default function Services() {
           </section>
 
           {/* Education Loan */}
-          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card relative overflow-hidden group">
+          <section ref={c6Ref} style={revealStyle(c6Vis)} className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card relative overflow-hidden group">
             <div className="absolute inset-0 z-0">
               <img className="w-full h-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-700" alt="" src="https://www.cashe.co.in/wp-content/uploads/2024/12/education-loan-interest-rates-title-image.png" />
             </div>
@@ -208,7 +215,7 @@ export default function Services() {
           </section>
 
           {/* Property Loan */}
-          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card relative overflow-hidden group">
+          <section ref={c7Ref} style={revealStyle(c7Vis)} className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-white p-xl service-hover-card relative overflow-hidden group">
             <div className="absolute inset-0 z-0">
               <img className="w-full h-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-700" alt="" src="https://img.etimg.com/thumb/width-300,height-225,imgsize-34604,resizemode-75,msid-98727474/wealth/borrow/tax-savings-home-loan-top-up-could-be-the-cheapest-loan-available-for-you/top-up-home-loan-benefits.jpg" />
             </div>
@@ -229,7 +236,7 @@ export default function Services() {
           </section>
 
           {/* Mudra Loan */}
-          <section className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-surface-container p-xl service-hover-card relative overflow-hidden group">
+          <section ref={c8Ref} style={revealStyle(c8Vis)} className="md:col-span-4 rounded-xl border border-outline-variant/30 bg-surface-container p-xl service-hover-card relative overflow-hidden group">
             <div className="absolute inset-0 z-0">
               <img className="w-full h-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-700" alt="" src="https://5.imimg.com/data5/SELLER/Default/2024/3/402801898/JU/BT/QP/138647904/mudra-loan-500x500.png" />
             </div>

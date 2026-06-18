@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useReveal, revealStyle } from '../hooks/useReveal'
 
 function calculateEMI(principal, rate, tenure, tenureUnit) {
   const months = tenureUnit === 'years' ? tenure * 12 : tenure
@@ -32,6 +33,8 @@ export default function EmiCalculator() {
   const [rate, setRate] = useState(8.5)
   const [tenure, setTenure] = useState(5)
   const [tenureUnit, setTenureUnit] = useState('years')
+  const [calcRef, calcVis] = useReveal()
+  const [tableRef, tableVis] = useReveal()
 
   const { emi, totalInterest, totalPayable } = calculateEMI(amount, rate, tenure, tenureUnit)
   const schedule = generateSchedule(amount, rate, tenure, tenureUnit)
@@ -39,15 +42,21 @@ export default function EmiCalculator() {
 
   return (
     <main className="mt-giant">
+      <style>{`
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .anim-hero { animation: fadeInUp 0.8s ease-out both; }
+        .anim-hero-delay { animation: fadeInUp 0.8s ease-out 0.3s both; }
+      `}</style>
+
       <section className="relative pt-xxl pb-giant bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-container to-primary"></div>
         <div className="relative z-10 max-w-container-max mx-auto px-lg text-center">
-          <h1 className="text-display-lg-mobile md:text-display-lg text-on-primary mb-md">EMI Calculator</h1>
-          <p className="text-body-lg text-on-primary-container max-w-2xl mx-auto">Plan your finances better with our easy-to-use EMI calculator</p>
+          <h1 className="anim-hero text-display-lg-mobile md:text-display-lg text-on-primary mb-md">EMI Calculator</h1>
+          <p className="anim-hero-delay text-body-lg text-on-primary-container max-w-2xl mx-auto">Plan your finances better with our easy-to-use EMI calculator</p>
         </div>
       </section>
 
-      <section className="section-padding">
+      <section ref={calcRef} style={revealStyle(calcVis)} className="section-padding">
         <div className="max-w-container-max mx-auto px-lg">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-xl">
             <div className="card p-xl">
@@ -132,7 +141,7 @@ export default function EmiCalculator() {
           </div>
 
           {schedule.length > 0 && (
-            <div className="card p-xl mt-xl overflow-x-auto">
+            <div ref={tableRef} style={revealStyle(tableVis)} className="card p-xl mt-xl overflow-x-auto">
               <h3 className="text-headline-md text-primary mb-md">Amortization Schedule (First 12 Months)</h3>
               <table className="w-full text-left">
                 <thead>

@@ -20,10 +20,15 @@ export default function Contact() {
 
   return (
     <main className="mt-giant">
+      <style>{`
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .anim-hero { animation: fadeInUp 0.8s ease-out both; }
+        .anim-hero-delay { animation: fadeInUp 0.8s ease-out 0.3s both; }
+      `}</style>
       <section className="bg-gradient-to-br from-primary via-primary-container to-primary py-xxl text-on-primary">
         <div className="max-w-container-max mx-auto px-lg">
-          <h1 className="text-display-lg mb-md">Get in Touch</h1>
-          <p className="text-body-lg max-w-2xl opacity-90">Expert financial guidance is just a message away. Our team of specialists is ready to help you navigate your growth journey.</p>
+          <h1 className="anim-hero text-display-lg mb-md">Get in Touch</h1>
+          <p className="anim-hero-delay text-body-lg max-w-2xl opacity-90">Expert financial guidance is just a message away. Our team of specialists is ready to help you navigate your growth journey.</p>
         </div>
       </section>
 

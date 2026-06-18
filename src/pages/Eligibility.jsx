@@ -42,11 +42,16 @@ export default function Eligibility() {
     const recs = getRecommendations()
     return (
       <main className="mt-giant">
+        <style>{`
+          @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+          .anim-hero { animation: fadeInUp 0.8s ease-out both; }
+          .anim-hero-delay { animation: fadeInUp 0.8s ease-out 0.3s both; }
+        `}</style>
         <section className="relative pt-xxl pb-giant bg-primary overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-container to-primary"></div>
           <div className="relative z-10 max-w-container-max mx-auto px-lg text-center">
-            <span className="material-symbols-outlined text-6xl text-secondary-fixed mb-sm" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-            <h1 className="text-display-lg-mobile md:text-display-lg text-on-primary mb-md">Your Eligibility Results</h1>
+            <span className="anim-hero material-symbols-outlined text-6xl text-secondary-fixed mb-sm" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+            <h1 className="anim-hero-delay text-display-lg-mobile md:text-display-lg text-on-primary mb-md">Your Eligibility Results</h1>
           </div>
         </section>
         <section ref={resultsRef} className="section-padding" style={revealStyle(resultsVis)}>
@@ -85,11 +90,16 @@ export default function Eligibility() {
 
   return (
     <main className="mt-giant">
+      <style>{`
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .anim-hero { animation: fadeInUp 0.8s ease-out both; }
+        .anim-hero-delay { animation: fadeInUp 0.8s ease-out 0.3s both; }
+      `}</style>
       <section className="relative pt-xxl pb-giant bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-container to-primary"></div>
         <div className="relative z-10 max-w-container-max mx-auto px-lg text-center">
-          <h1 className="text-display-lg-mobile md:text-display-lg text-on-primary mb-md">Check Your Loan Eligibility</h1>
-          <p className="text-body-lg text-on-primary-container max-w-2xl mx-auto">Find out how much you can borrow in just a few steps</p>
+          <h1 className="anim-hero text-display-lg-mobile md:text-display-lg text-on-primary mb-md">Check Your Loan Eligibility</h1>
+          <p className="anim-hero-delay text-body-lg text-on-primary-container max-w-2xl mx-auto">Find out how much you can borrow in just a few steps</p>
         </div>
       </section>
 

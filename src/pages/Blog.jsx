@@ -29,19 +29,25 @@ export default function Blog() {
 
   return (
     <main className="mt-giant">
+      <style>{`
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .anim-hero { animation: fadeInUp 0.8s ease-out both; }
+        .anim-hero-delay { animation: fadeInUp 0.8s ease-out 0.3s both; }
+        .anim-hero-delay-2 { animation: fadeInUp 0.8s ease-out 0.6s both; }
+      `}</style>
       <section className="bg-surface py-xxl border-b border-outline-variant/20">
         <div className="max-w-container-max mx-auto px-lg">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-lg">
             <div>
-              <h1 className="text-display-lg-mobile md:text-display-lg text-primary mb-sm">Financial Insights</h1>
-              <p className="text-body-lg text-on-surface-variant max-w-2xl">Expert guidance and strategic tips to help you navigate the complexities of modern personal and business finance.</p>
+              <h1 className="anim-hero text-display-lg-mobile md:text-display-lg text-primary mb-sm">Financial Insights</h1>
+              <p className="anim-hero-delay text-body-lg text-on-surface-variant max-w-2xl">Expert guidance and strategic tips to help you navigate the complexities of modern personal and business finance.</p>
             </div>
-            <div className="relative w-full md:w-[400px]">
+            <div className="anim-hero-delay-2 relative w-full md:w-[400px]">
               <span className="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">search</span>
               <input className="w-full pl-xl pr-lg py-md bg-white border border-outline-variant rounded-lg focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all text-body-md" placeholder="Search for articles..." type="text" />
             </div>
           </div>
-          <div className="flex gap-sm mt-xl overflow-x-auto no-scrollbar py-sm">
+          <div className="anim-hero-delay-2 flex gap-sm mt-xl overflow-x-auto no-scrollbar py-sm">
             {categories.map((cat) => (
               <button key={cat} onClick={() => { setActiveCategory(cat); setVisibleCount(PER_PAGE) }}
                 className={`px-lg py-sm rounded-full text-label-md whitespace-nowrap transition-colors ${

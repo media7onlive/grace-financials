@@ -18,6 +18,12 @@ export default function SuccessStories() {
 
   return (
     <main className="mt-giant">
+      <style>{`
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .anim-hero { animation: fadeInUp 0.8s ease-out both; }
+        .anim-hero-delay { animation: fadeInUp 0.8s ease-out 0.3s both; }
+        .anim-hero-delay-2 { animation: fadeInUp 0.8s ease-out 0.6s both; }
+      `}</style>
       <section className="relative py-giant overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent z-10"></div>
@@ -25,10 +31,10 @@ export default function SuccessStories() {
         </div>
         <div className="relative z-20 max-w-container-max mx-auto px-lg text-center md:text-left">
           <div className="max-w-2xl">
-            <span className="inline-block px-md py-xs bg-secondary-fixed text-on-secondary-fixed rounded-full text-label-md mb-md">Our Success Stories</span>
-            <h1 className="text-display-lg-mobile md:text-display-lg text-primary mb-lg">Real Stories, Real Financial Growth</h1>
-            <p className="text-body-lg text-on-surface-variant mb-xl">Witness the transformation of Indian entrepreneurs and families who partnered with Grace Financial to turn their aspirations into enduring legacies.</p>
-            <div className="flex flex-col sm:flex-row gap-md">
+            <span className="anim-hero inline-block px-md py-xs bg-secondary-fixed text-on-secondary-fixed rounded-full text-label-md mb-md">Our Success Stories</span>
+            <h1 className="anim-hero-delay text-display-lg-mobile md:text-display-lg text-primary mb-lg">Real Stories, Real Financial Growth</h1>
+            <p className="anim-hero-delay-2 text-body-lg text-on-surface-variant mb-xl">Witness the transformation of Indian entrepreneurs and families who partnered with Grace Financial to turn their aspirations into enduring legacies.</p>
+            <div className="anim-hero-delay-2 flex flex-col sm:flex-row gap-md">
               <Link to="/contact" className="bg-primary text-on-primary px-xl py-md rounded-lg text-label-lg shadow-lg hover:opacity-90 transition-all">Start Your Story</Link>
               <Link to="/contact" className="bg-surface border-2 border-primary text-primary px-xl py-md rounded-lg text-label-lg hover:bg-surface-container transition-all">View Case Studies</Link>
             </div>
