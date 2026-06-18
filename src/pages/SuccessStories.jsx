@@ -102,7 +102,7 @@ export default function SuccessStories() {
           </div>
           <div className="masonry-grid gap-lg">
             {[
-              { url: 'https://lh3.googleusercontent.com/gps-cs-s/APNQkAG2lnoN44jRvXe4sz_CKig7vEU9qYE8KNct1nMadTCTKIpexYBp0rHI4KMgdm3YK9AmcrMlt0gXZWWAEhogqfFkWGF1iXxYJ5A8yEe4cHQiQPqTteH0gshBG9i8cztUXtw94yFhn8iVVm0z=s0'},
+              { url: '/success_story1.webp'},
             ].map((item, i) => {
               const img = (
                 <div key={i} className="mb-lg break-inside-avoid">
