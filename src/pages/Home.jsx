@@ -43,7 +43,7 @@ export default function Home() {
       `}</style>
 
       {/* Hero Section */}
-      <section className="relative pb-xxl md:pb-giant bg-primary overflow-hidden min-h-[700px]">
+      <section className="relative pb-xxl md:pb-giant bg-primary overflow-hidden min-h-screen md:min-h-[700px]">
         <div className="absolute inset-0 z-0 opacity-40 anim-fade-in" style={{ animationDuration: '1.5s' }}>
           <img
             className="w-full h-full object-cover"
@@ -52,7 +52,7 @@ export default function Home() {
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent z-10 anim-fade-in" style={{ animationDuration: '1s' }}></div>
-        <div className="max-w-container-max mx-auto px-lg relative z-20 flex flex-col md:flex-row items-center min-h-[600px] gap-xl">
+        <div className="max-w-container-max mx-auto px-lg relative z-20 flex flex-col md:flex-row items-center min-h-0 md:min-h-[600px] gap-xl">
           <div className="w-full md:w-3/5 text-white pt-xl md:pt-0">
             <h1 className="text-display-lg-mobile md:text-display-lg mb-md leading-tight anim-hero">
               Your Trusted Financial Partner for Every Financial Goal
