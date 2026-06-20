@@ -60,8 +60,12 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="max-w-container-max mx-auto px-lg py-lg border-t border-outline/10 text-center">
+      <div className="max-w-container-max mx-auto px-lg py-lg border-t border-outline/10 text-center space-y-xs">
         <p className="text-on-primary-container text-body-sm">&copy; 2026 Grace Financial Consultancy. All rights reserved.</p>
+        <p className="text-on-primary-container text-body-sm">
+          Website created by{' '}
+          <a href="https://www.astrivix.in/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">astrivix.in</a>
+        </p>
       </div>
     </footer>
   )
