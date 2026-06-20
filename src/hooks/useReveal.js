@@ -1,24 +1,27 @@
-import { useState, useRef, useLayoutEffect } from 'react'
+import { useState, useCallback, useLayoutEffect } from 'react'
 
 export function useReveal() {
-  const ref = useRef(null)
   const [revealed, setRevealed] = useState(false)
+  const [node, setNode] = useState(null)
+
+  const ref = useCallback((el) => {
+    if (el) setNode(el)
+  }, [])
 
   useLayoutEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const rect = el.getBoundingClientRect()
+    if (!node) return
+    const rect = node.getBoundingClientRect()
     if (rect.top < window.innerHeight) {
       setRevealed(true)
       return
     }
 
     const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) { setRevealed(true); observer.unobserve(el) }
+      if (entry.isIntersecting) { setRevealed(true); observer.unobserve(node) }
     }, { threshold: 0.15 })
-    requestAnimationFrame(() => observer.observe(el))
+    requestAnimationFrame(() => observer.observe(node))
     return () => observer.disconnect()
-  }, [])
+  }, [node])
 
   return [ref, revealed]
 }

@@ -35,6 +35,9 @@ export default function Footer() {
               { label: 'Loan Calculator', to: '/emi-calculator' },
               { label: 'Eligibility Check', to: '/eligibility' },
               { label: 'Success Stories', to: '/success-stories' },
+              { label: 'Privacy Policy', to: '/privacy-policy' },
+              { label: 'Terms & Conditions', to: '/terms-conditions' },
+              { label: 'Disclaimer', to: '/disclaimer' },
             ].map((item) => (
               <li key={item.label}>
                 <Link to={item.to} className="text-on-primary-container hover:text-on-primary text-body-sm transition-colors">{item.label}</Link>

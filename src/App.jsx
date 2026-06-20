@@ -13,6 +13,9 @@ import SuccessStories from './pages/SuccessStories'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 import Application from './pages/Application'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsConditions from './pages/TermsConditions'
+import Disclaimer from './pages/Disclaimer'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -35,9 +38,9 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
-      <Navbar />
       {loading ? <Loading /> : (
         <>
+          <Navbar />
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<Home />} />
@@ -49,6 +52,9 @@ function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/apply" element={<Application />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-conditions" element={<TermsConditions />} />
+              <Route path="/disclaimer" element={<Disclaimer />} />
             </Routes>
           </main>
           <Footer />
