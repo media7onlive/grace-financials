@@ -16,6 +16,8 @@ import Application from './pages/Application'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsConditions from './pages/TermsConditions'
 import Disclaimer from './pages/Disclaimer'
+import RefundPolicy from './pages/RefundPolicy'
+import Sitemap from './pages/Sitemap'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -55,6 +57,8 @@ function App() {
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-conditions" element={<TermsConditions />} />
               <Route path="/disclaimer" element={<Disclaimer />} />
+              <Route path="/refund-policy" element={<RefundPolicy />} />
+              <Route path="/sitemap" element={<Sitemap />} />
             </Routes>
           </main>
           <Footer />

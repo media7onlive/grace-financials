@@ -38,6 +38,8 @@ export default function Footer() {
               { label: 'Privacy Policy', to: '/privacy-policy' },
               { label: 'Terms & Conditions', to: '/terms-conditions' },
               { label: 'Disclaimer', to: '/disclaimer' },
+              { label: 'Refund Policy', to: '/refund-policy' },
+              { label: 'Sitemap', to: '/sitemap' },
             ].map((item) => (
               <li key={item.label}>
                 <Link to={item.to} className="text-on-primary-container hover:text-on-primary text-body-sm transition-colors">{item.label}</Link>
