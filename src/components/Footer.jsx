@@ -11,7 +11,7 @@ const GraceLogo = () => (
 
 export default function Footer() {
   return (
-    <footer className="bg-primary w-full mt-giant border-t border-outline/20">
+    <footer className="bg-primary w-full mt-giant border-t border-outline/20 relative z-10">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-xl max-w-container-max mx-auto px-lg py-xxl">
         <div className="flex flex-col gap-md">
           <GraceLogo />
