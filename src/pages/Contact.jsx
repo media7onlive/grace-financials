@@ -80,9 +80,9 @@ export default function Contact() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-label-md text-on-surface-variant">Phone</p>
-                  <a href="tel:+9199955333809" className="text-body-lg text-primary hover:underline block break-words">+91 99955 33988</a>
-                  <a href="tel:+9197782292234" className="text-body-md text-on-surface-variant hover:underline block break-words">+91 99955 33578</a>
-                  <a href="tel:+9197782292234" className="text-body-md text-on-surface-variant hover:underline block break-words">+91 99955 33938</a>
+                  <a href="tel:+919995533988" className="text-body-lg text-primary hover:underline block break-words">+91 99955 33988</a>
+                  <a href="tel:+919995533578" className="text-body-md text-on-surface-variant hover:underline block break-words">+91 99955 33578</a>
+                  <a href="tel:+919995533938" className="text-body-md text-on-surface-variant hover:underline block break-words">+91 99955 33938</a>
                 </div>
               </div>
               <div className="flex gap-lg items-start">
