@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const reviews = [
   {
-    name: 'For Checking',
+    name: 'Shanty Thomas',
     role: 'Grace',
     img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCpfLMMyKMSuZ7-6rBW1jStfssy2yBT0l4nYnTR6MhGuSXVeKcA_LqP7fTGt99RCY_wYQ_ximMHyE9qL3abHs9VY7Z9pz-gQruVMHNcZBjNnRd3xzqJqJNiFXPQWn-sQq0qpWc-rUeEfGMmqtG59QOj1Z63Z1DWKWapjZRMYxm9uDvOFDls3gFA2QBncpDuIeNrlPHOgzXjgypPbxSniNU3petuH3-wN_rNWDVgCR6wNE-M2lWcnSvmUA',
     quote: "The transparency Grace Financial offered during our home loan process was refreshing. They didn't just give us a loan; they gave us a financial roadmap for the next decade.",
