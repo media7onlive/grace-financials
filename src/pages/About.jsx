@@ -164,7 +164,7 @@ export default function About() {
           </div>
           <div className="flex justify-center">
             {[
-              { name: 'Shanty Thomas', role: 'Founder & CEO', img: 'https://raw.githubusercontent.com/33binil/media7kochi/a65dd1ff7de8419edcccf432558fd75e31f2c943/public/CEO_of_Media7.webp' },
+              { name: 'Shanty Thomas', role: 'Founder & CEO', img: '/CEO_of_Media7.webp' },
             ].map((m) => (
               <div key={m.name} className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 max-w-xs">
                 <div className="aspect-[4/5] overflow-hidden">
