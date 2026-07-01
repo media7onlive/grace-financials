@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: grace-financials-backend
+    env: node
+    plan: starter # Starter (paid) plan is required on Render to use persistent disks (volumes)
+    rootDirectory: server
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: PORT
+        value: 3001
+      - key: BREVO_API_KEY
+        sync: false # Set this value in the Render dashboard
+      - key: ADMIN_EMAIL
+        sync: false # Set this value in the Render dashboard
+      - key: SENDER_EMAIL
+        sync: false # Set this value in the Render dashboard
+    disk:
+      name: sqlite-data
+      mountPath: /opt/render/project/src/server/data
+      sizeGB: 1
