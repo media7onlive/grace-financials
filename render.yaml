@@ -3,7 +3,7 @@ services:
     name: grace-financials-backend
     env: node
     plan: starter # Starter (paid) plan is required on Render to use persistent disks (volumes)
-    rootDirectory: server
+    rootDir: server
     buildCommand: npm install
     startCommand: node index.js
     envVars:
