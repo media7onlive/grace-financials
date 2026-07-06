@@ -4,6 +4,27 @@ import { useReveal, revealStyle } from '../hooks/useReveal'
 // Paste your direct image links here (direct image URLs, not Instagram post URLs)
 const galleryImages = [
   {
+    imageUrl: 'https://i.pinimg.com/736x/08/73/26/087326dc85b8a8fe7e54cc170b9e778c.jpg',
+    caption: '🚀 Zero Collateral Loan – ഇനി ബിസിനസ് വളർച്ചയ്ക്ക് തടസ്സമില്ല!',
+    category: 'Ad Poster',
+    postedAt: '2026-06-02',
+    mediaType: 'IMAGE',
+  },
+  {
+    imageUrl: 'https://www.youtube.com/embed/H_pv_pffvQs?autoplay=1&mute=1&loop=1&playlist=H_pv_pffvQs&controls=0&modestbranding=1&rel=0',
+    caption: '💰 Personal Loan മുതൽ ₹1 കോടി+ Business Finance വരെ | Grace Financial Consultancy',
+    category: 'Reels',
+    postedAt: '2026-07-02',
+    mediaType: 'VIDEO',
+  },
+  {
+    imageUrl: 'https://www.youtube.com/embed/7vc2q6bnAC8?autoplay=1&mute=1&loop=1&playlist=7vc2q6bnAC8&controls=0&modestbranding=1&rel=0',
+    caption: '💰 Personal Loan മുതൽ ₹1 കോടി+ Business Finance വരെ | Grace Financial Consultancy',
+    category: 'Reels',
+    postedAt: '2026-07-02',
+    mediaType: 'VIDEO',
+  },
+  {
     imageUrl: 'https://i.pinimg.com/736x/9e/b8/7b/9eb87b315470fe24357579e65242186c.jpg',
     caption: 'Need Funds to Grow your Business..',
     category: 'Ad Poster',

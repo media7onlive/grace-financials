@@ -19,6 +19,7 @@ import TermsConditions from './pages/TermsConditions'
 import Disclaimer from './pages/Disclaimer'
 import RefundPolicy from './pages/RefundPolicy'
 import Sitemap from './pages/Sitemap'
+import DnsCheck from './pages/DnsCheck'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -63,6 +64,7 @@ function App() {
               <Route path="/disclaimer" element={<Disclaimer />} />
               <Route path="/refund-policy" element={<RefundPolicy />} />
               <Route path="/sitemap" element={<Sitemap />} />
+              <Route path="/dns-check" element={<DnsCheck />} />
             </Routes>
           </main>
           <Footer />
