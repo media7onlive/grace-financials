@@ -20,6 +20,7 @@ import Disclaimer from './pages/Disclaimer'
 import RefundPolicy from './pages/RefundPolicy'
 import Sitemap from './pages/Sitemap'
 import DnsCheck from './pages/DnsCheck'
+import Error from './pages/Error'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -31,6 +32,7 @@ function App() {
   const { pathname } = useLocation()
   const [loading, setLoading] = useState(false)
   const timerRef = useRef(null)
+  const [showError, setShowError] = useState(true)
 
   useEffect(() => {
     requestAnimationFrame(() => setLoading(true))
@@ -39,10 +41,23 @@ function App() {
     return () => clearTimeout(timerRef.current)
   }, [pathname])
 
+  useEffect(() => {
+    function handleKeyDown(e) {
+      if (e.key === 'e' && !e.target.matches('input, textarea, select')) {
+        setShowError(prev => !prev)
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
 
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
+
+      {/* Remove this for hide Error */}
+      {showError && <Error />}
+
       {loading ? <Loading /> : (
         <>
           <Navbar />
