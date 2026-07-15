@@ -233,6 +233,9 @@ export default function Gallery() {
   // Pagination & Filters
   const [category, setCategory] = useState('All')
   const [searchQuery, setSearchQuery] = useState('')
+  const [visibleCount, setVisibleCount] = useState(6)
+
+  const showMore = () => setVisibleCount(prev => prev + 6)
 
   // Lightbox State
   const [activePhotoIndex, setActivePhotoIndex] = useState(null)
@@ -249,6 +252,9 @@ export default function Gallery() {
       (post.caption && post.caption.toLowerCase().includes(searchQuery.toLowerCase()))
     return matchCategory && matchSearch
   })
+
+  const displayPosts = filteredPosts.slice(0, visibleCount)
+  const hasMore = visibleCount < filteredPosts.length
 
   // Lightbox Navigation
   const showPrev = useCallback(() => {
@@ -288,6 +294,10 @@ export default function Gallery() {
       showPrev()
     }
   }
+
+  useEffect(() => {
+    setVisibleCount(6)
+  }, [category, searchQuery])
 
   const formatDate = (isoString) => {
     if (!isoString) return ''
@@ -474,7 +484,7 @@ export default function Gallery() {
           {/* Search & Count */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-sm w-full sm:w-auto">
             <div className="text-body-sm text-on-surface-variant shrink-0">
-              {filteredPosts.length === 0 ? 'No images to show' : `Showing ${filteredPosts.length} image${filteredPosts.length > 1 ? 's' : ''}`}
+              {filteredPosts.length === 0 ? 'No images to show' : `Showing ${displayPosts.length} of ${filteredPosts.length} image${filteredPosts.length > 1 ? 's' : ''}`}
             </div>
             <div className="relative w-full sm:w-64">
               <span className="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">
@@ -509,7 +519,7 @@ export default function Gallery() {
         {/* Masonry Image Grid */}
         {filteredPosts.length > 0 && (
           <div className="masonry-grid gap-lg" style={revealStyle(galleryVis)}>
-            {filteredPosts.map((post, i) => (
+            {displayPosts.map((post, i) => (
               <div
                 key={i}
                 onClick={() => setActivePhotoIndex(i)}
@@ -565,6 +575,18 @@ export default function Gallery() {
                 </div>
               </div>
             ))}
+          </div>
+        )}
+
+        {hasMore && (
+          <div className="flex justify-center mt-xl">
+            <button
+              onClick={showMore}
+              className="bg-primary text-on-primary px-xl py-md rounded-full font-label-lg hover:bg-primary/90 hover:scale-[0.98] transition-all shadow-md flex items-center gap-sm"
+            >
+              <span>Show More</span>
+              <span className="material-symbols-outlined text-[20px]">expand_circle_down</span>
+            </button>
           </div>
         )}
       </section>
